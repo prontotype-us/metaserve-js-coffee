@@ -12,7 +12,6 @@ class CoffeeScriptCompiler extends Compiler
     compile: (coffee_filename) ->
         options = @options
         return (req, res, next) ->
-            console.log '[Coffee compiler] Trying to compile ' + coffee_filename
             file_str = fs.readFileSync(coffee_filename).toString()
             res.setHeader 'Content-Type', 'text/javascript'
             res.end coffee.compile(file_str, options.coffee_options)

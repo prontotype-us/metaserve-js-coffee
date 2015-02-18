@@ -1,6 +1,6 @@
 {
     "name": "metaserve-js-coffee",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "metaserve plugin for rendering Javascript from .coffee files with CoffeeScript",
     "homepage": "http://github.com/prontotype-us/metaserve-js-coffee",
     "repository": {
