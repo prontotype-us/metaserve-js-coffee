@@ -9,12 +9,15 @@ class CoffeeScriptCompiler extends Compiler
         coffee_options:
             bare: true
 
-    compile: (coffee_filename) ->
+    compile: (coffee_filename, cb) ->
         options = @options
-        return (req, res, next) ->
-            file_str = fs.readFileSync(coffee_filename).toString()
-            res.setHeader 'Content-Type', 'text/javascript'
-            res.end coffee.compile(file_str, options.coffee_options)
+        file_str = fs.readFileSync(coffee_filename).toString()
+
+        cb null, {
+            content_type: 'text/javascript'
+            source: file_str
+            compiled: coffee.compile(file_str, options.coffee_options)
+        }
 
 module.exports = (options={}) -> new CoffeeScriptCompiler(options)
 
