@@ -1,6 +1,6 @@
 fs = require 'fs'
 coffee = require 'coffee-script'
-Compiler = require 'metaserve/src/compiler'
+Compiler = require 'metaserve/lib/compiler'
 
 class CoffeeScriptCompiler extends Compiler
 
